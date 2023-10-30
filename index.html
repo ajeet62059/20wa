@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Multiple Tabs and Search Example</title>
+  </head>
+  <body>
+    <button onclick="openTabs()">Open Multiple Tabs and Search</button>
+
+    <script>
+      function openTabs() {
+        // URLs to open in new tabs
+        const urls = [
+          "https://www.bing.com/search?q=COVID-19+latest+updates",
+          "https://www.bing.com/search?q=How+to+lose+weight+fast?",
+          "https://www.bing.com/search?q=Best+Netflix+series+2023",
+          "https://www.bing.com/search?q=Upcoming+iPhone+features",
+          "https://www.bing.com/search?q=Climate+change+effects+on+weather",
+          "https://www.bing.com/search?q=Cryptocurrency+market+trends",
+          "https://www.bing.com/search?q=Mental+health+awareness",
+          "https://www.bing.com/search?q=2023+fashion+trends",
+          "https://www.bing.com/search?q=Plant-based+diet+benefits",
+          "https://www.bing.com/search?q=Space+exploration+news",
+          "https://www.bing.com/search?q=Sustainable+living+tips",
+          "https://www.bing.com/search?q=Travel+destinations+post-pandemic",
+          "https://www.bing.com/search?q=DIY+home+improvement+ideas",
+          "https://www.bing.com/search?q=New+video+game+releases",
+          "https://www.bing.com/search?q=Remote+work+productivity+tips",
+          "https://www.bing.com/search?q=Healthy+meal+prep+recipes",
+          "https://www.bing.com/search?q=Electric+vehicles+vs.+gas+cars",
+          "https://www.bing.com/search?q=Social+media+marketing+strategies",
+          "https://www.bing.com/search?q=Best+podcasts+to+listen+to",
+          "https://www.bing.com/search?q=Hollywoods+latest+scandals",
+        ];
+
+        // Function to open tabs with a delay
+        function openTabWithDelay(index) {
+          if (index < urls.length) {
+            window.open(urls[index], "_blank");
+            setTimeout(function () {
+              openTabWithDelay(index + 1);
+            }, 2000); // Open the next tab after a 1-second delay
+          }
+        }
+
+        openTabWithDelay(0); // Start opening tabs from the first URL
+      }
+    </script>
+  </body>
+</html>
